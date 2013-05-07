@@ -1,0 +1,25 @@
+{
+  "name": "sprite",
+  "repo": "smagch/sprite",
+  "description": "Event Bubbling Sprite, mixining EventEmitter/Enumerable",
+  "version": "0.0.1",
+  "keywords": [
+    "event",
+    "emitter",
+    "bubble",
+    "enumerable",
+    "sprite"
+  ],
+  "dependencies": {
+    "component/enumerable": "*",
+    "component/emitter": "*"
+  },
+  "development": {
+    "visionmedia/mocha": "*",
+    "component/assert": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
