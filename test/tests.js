@@ -142,4 +142,19 @@ describe('Sprite', function () {
       assert(b.parent() === c);
     });
   });
+
+  describe('#emit', function () {
+    it('should bubble up event', function (done) {
+      var a = new Sprite();
+      var b = new Sprite();
+      b.add(a);
+      b.on('foo', function (bar, twoThousand) {
+        assert(bar === 'bar', 'bar should be ' + bar);
+        assert(2000 === twoThousand);
+        done();
+      });
+
+      a.emit('foo', 'bar', 2000);
+    });
+  });
 });

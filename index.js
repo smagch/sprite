@@ -109,8 +109,7 @@ Sprite.prototype.emit = function (ev) {
 
   // Sprite is the top node parent
   var parent = this._parent || Sprite;
-  var args = slice.call(arguments, 1);
-  parent.emit(ev, args);
+  parent.emit.apply(parent, arguments);
   return this;
 };
 
