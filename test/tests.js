@@ -143,6 +143,23 @@ describe('Sprite', function () {
     });
   });
 
+  describe('#parents', function () {
+    it('should return all ancester nodes', function () {
+      var a = new Sprite();
+      var b = new Sprite();
+      var c = new Sprite();
+      var d = new Sprite();
+      d.add(c);
+      c.add(b);
+      b.add(a);
+      var parents = a.parents();
+      assert(parents.length === 3);
+      assert(parents.indexOf(b) !== -1);
+      assert(parents.indexOf(c) !== -1);
+      assert(parents.indexOf(d) !== -1);
+    });
+  });
+
   describe('#emit', function () {
     it('should bubble up event', function (done) {
       var a = new Sprite();

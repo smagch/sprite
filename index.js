@@ -52,6 +52,18 @@ Sprite.prototype.parent = function () {
 };
 
 /**
+ * return all of its ancesters
+ * @return {Array} array of Sprite
+ */
+Sprite.prototype.parents = function () {
+  var parents = [];
+  for (var node = this; node = node.parent();) {
+    parents.push(node);
+  }
+  return parents;
+};
+
+/**
  * add a sprite as child
  * @param {Sprite}
  * @return {Sprite} self
