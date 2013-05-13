@@ -2,7 +2,7 @@
   "name": "sprite",
   "repo": "smagch/sprite",
   "description": "Event Bubbling Sprite, mixining EventEmitter/Enumerable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "event",
     "emitter",
