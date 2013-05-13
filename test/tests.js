@@ -10,6 +10,16 @@ describe('Sprite', function () {
     }
   });
 
+  it("should mixin first argument when it doesn't called with `New`", function () {
+    function MySprite() {}
+    Sprite(MySprite.prototype);
+    assert(MySprite.prototype.add === Sprite.prototype.add);
+    assert(MySprite.prototype.remove === Sprite.prototype.remove);
+    assert(MySprite.prototype.removeAll === Sprite.prototype.removeAll);
+    assert(MySprite.prototype.parent === Sprite.prototype.parent);
+    assert(MySprite.prototype.parents === Sprite.prototype.parents);
+  }); 
+
   it('prototype should mixin Emitter methods except .emit()', function () {
     for (var key in Emitter.prototype) {
       var msg = 'key : ' + key;

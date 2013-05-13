@@ -21,7 +21,13 @@ module.exports = Sprite;
  *   "_parent" {Sprite} parent Sprite
  *   "_nodes" {Array} children Sprite
  */
-function Sprite() {}
+function Sprite(obj) {
+  if (!(this instanceof Sprite)) {
+    for (var key in Sprite.prototype) {
+      obj[key] = Sprite.prototype[key];
+    }
+  }
+}
 
 /**
  * allow global event bus
